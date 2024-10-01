@@ -8,7 +8,7 @@ def password_check():
     result = None
     if request.method == 'POST':
         password = request.form['password']
-        response = requests.post('http://localhost:7071/api/password_strength', json={"password": password})
+        response = requests.post('https://passwordcheckerfuncapp.azurewebsites.net/api/password_strength', json={"password": password})
         if response.status_code == 200:
             result = response.json()
         else:
